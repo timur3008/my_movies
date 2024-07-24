@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block header %}
+    <header class='header'>
+        <div class="container">
+            <div class="filter">
+                <div class="filter__panels">
+                    <div class="filter__item">
+                        <div class="filter__current-item">Все</div>
+                        <div data-action='genre' class="filter__list">
+                            {% for genre in genres %}
+                                <a href="" class="filter__link">{{genre}}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="filter__item">
+                        <div class="filter__current-item">Все</div>
+                        <div data-action='country' class="filter__list">
+                            {% for country in countries %}
+                                <a href="" class="filter__link">{{country}}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="filter__item">
+                        <div class="filter__current-item">Все</div>
+                        <div data-action='yearFrom' class="filter__list">
+                            {% for year in years %}
+                                <a href="" class="filter__link">{{year}}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="filter__item">
+                        <div class="filter__current-item">Все</div>
+                        <div data-action='yearTo' class="filter__list">
+                            {% for year in yearsTo %}
+                                <a href="" class="filter__link">{{year}}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="filter__buttons">
+                    <a href="" class="filter__button">Сбросить</a>
+                    <a href="" class="filter__button">Пременить</a>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock header %}
+{% block content %}
+
+    <main class="cards">
+        {% for movie in movies %}
+        <div class="card">
+            <a href={% url 'current_movie' movie.id %} class="card__image-link">
+                <div class="card__image">
+                    <img src={{ movie.url }} alt="" class="card__image">
+                </div>
+                <span class="card__name">{{ movie.name }}</span>
+            </a>
+            
+            <div class="card__info">
+                <a href="" class="card__year">{{ movie.year }}</a> /
+                <a href="" class="card__genre">{{ movie.genre }}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </main>
+
+{% endblock content %}

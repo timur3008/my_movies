@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block header %}
+    <header class='header'></header>
+{% endblock header %}
+{% block content %}
+
+    <div class="movie">
+        <div class="movie__tab-container">
+            <span data-index="0" class="movie__tab movie__tab_active">Описание</span>
+            <span data-index="1" class="movie__tab">Отзывы</span>
+            <span data-index="2" class="movie__tab">Кадры</span>
+        </div>
+
+        <div class="movie__tab-content movie__card-container movie__tab-content_active">
+            <div class="movie__card-poster">
+                <img src={{ movie.poster }} alt="" class="movie__card-poster-image">
+            </div>
+
+            <div class="movie__card-info">
+                <span class="movie__card-ru-name">{{ movie.ruName }}</span>
+                <span class="movie__card-en-name">{{ movie.enName }}</span>
+                <div class="movie__card-rating-block">
+                    <div class="movie__card-imbd">
+                        <svg class="movie__card-imbd-image" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="MovieDescription_ratingIcon__1-opE"><g fill="#FC0" fill-rule="evenodd"><path d="M10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10zM3.333 7.333v5.037h1.482V7.333H3.333zm4.348 0L7.35 9.686l-.206-1.28c-.06-.41-.117-.768-.172-1.073h-1.86v5.037h1.257l.004-3.325.53 3.325h.894l.502-3.4.005 3.4h1.253V7.333H7.68zm4.048 5.037c.312 0 .546-.017.701-.05a.924.924 0 00.391-.181.681.681 0 00.222-.357c.043-.152.068-.454.068-.906V9.107c0-.476-.018-.796-.047-.958a.905.905 0 00-.218-.443c-.116-.132-.285-.228-.508-.286-.222-.058-.585-.087-1.217-.087h-.973v5.037h1.58zm1.975 0h1.185l.074-.382c.106.128.224.223.352.287.128.064.32.095.468.095a.9.9 0 00.536-.16.7.7 0 00.287-.38c.04-.146.06-.368.06-.666V9.769c0-.3-.006-.496-.02-.588a.67.67 0 00-.411-.505 1.163 1.163 0 00-.451-.08c-.15 0-.343.03-.471.088a1.036 1.036 0 00-.35.267V7.333h-1.26v5.037z"></path><path d="M15.185 11.218c0 .244-.008.399-.024.463s-.087.097-.14.097c-.053 0-.088-.031-.106-.093a2.043 2.043 0 01-.026-.426V9.924c0-.23.008-.374.023-.431.016-.057.05-.086.102-.086.053 0 .125.033.144.098.018.066.027.205.027.418v1.295zM11.742 8.24c.052.03.085.077.099.141.014.064.022.21.022.438v1.953c0 .335-.022.54-.065.616-.044.076-.16.113-.347.113V8.195c.142 0 .24.015.291.045z"></path></g></svg>
+                        {{ movie.imbd }}
+                    </div>
+                    <div class="movie__card-kp">
+                        <svg class="movie__card-kp-image" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="MovieDescription_ratingIcon__1-opE"><path d="M10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10zm0-8.667a1.333 1.333 0 100-2.666 1.333 1.333 0 000 2.666zM6 8.667a2.667 2.667 0 100-5.334 2.667 2.667 0 000 5.334zm0 8a2.667 2.667 0 100-5.334 2.667 2.667 0 000 5.334zm8-8a2.667 2.667 0 100-5.334 2.667 2.667 0 000 5.334zm0 8a2.667 2.667 0 100-5.334 2.667 2.667 0 000 5.334z" fill="#FF791A" fill-rule="evenodd"></path></svg>
+                        {{ movie.kp }}
+                    </div>
+                    <div class="movie__card-limit">{{ movie.limit }}</div>
+                </div>
+                <p class="movie__year">
+                    Год:
+                    <a href="" class="movie__year-span">{{ movie.year }}</a>
+                </p>
+                <p class="movie__country">
+                    Страна:
+                    <a href="" class="movie__country-span">{{ movie.country }}</a>
+                </p>
+                <div class="movie__genre">
+                    Жанр: 
+                    <div class="movie__genres">
+                        {% for genre in movie.genres %}
+                            <a class="movie__genres-link" href="">{{ genre }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <p class="movie__slogan">{{ movie.slogan }}</p>
+                <p class="movie__description">{{ movie.description }}</p>
+                <div class="movie__composition">
+                    Актёры
+                    <div class="movie__composition-div">
+                        {% for actor in movie.actors %}
+                            <a class="movie__composition-link" href="">{{ actor }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="movie__composition">
+                    Режиссеры
+                    <div class="movie__composition-div">
+                        {% for director in movie.directors %}
+                            <a class="movie__composition-link" href="">{{ director }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="movie__composition">
+                    Сценаристы
+                    <div class="movie__composition-div">
+                        {% for writer in movie.writers %}
+                            <a class="movie__composition-link" href="">{{ writer }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="movie__composition">
+                    Продюсеры
+                    <div class="movie__composition-div">
+                        {% for producer in movie.producers %}
+                            <a class="movie__composition-link" href="">{{ producer }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="movie__tab-content movie__card-comments">
+            <form action="" class="movie__card-form">
+                <a href="" class="movie__card-form-user"></a>
+                <input type="text" placeholder="Оставить отзыв: ..." class="movie__card-form-input">
+                <button class="movie__card-form-button">Отправить</button>
+            </form>
+        </div>
+
+        <div class="movie__tab-content movie__card-screens">
+            {% for screen in movie.screens %}
+                <img src={{ screen }} alt="" class="movie__card-screens-item">
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}
+{% block footer %}{% endblock footer %}

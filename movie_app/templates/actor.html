@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block header %}
+
+    <header class="header-actor">
+        <div class="container">
+            <div class="header-actor__block">
+                <div class="header-actor__image">
+                    <img src="https://cinerama.uz/images/person-placeholder.jpg" alt="" class="header-actor__image-img">
+                </div>
+                <div class="header-actor__info">
+                    <span class="header-actor__title">Фильмы с участием:</span>
+                    <h3 class="header-actor__name">{{ actor_name }}</h3>
+                </div>
+            </div>
+        </div>
+    </header>
+
+{% endblock header%}
+{% block content %}
+    <main class="cards">
+        {% for movie in movies %}
+        <div class="card">
+            <a href={% url 'current_movie' movie.id %} class="card__image-link">
+                <div class="card__image">
+                    <img src={{ movie.url }} alt="" class="card__image">
+                </div>
+                <span class="card__name">{{ movie.name }}</span>
+            </a>
+            
+            <div class="card__info">
+                <a href="" class="card__year">{{ movie.year }}</a> /
+                <a href="" class="card__genre">{{ movie.genre }}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </main>
+{% endblock content %}
