@@ -1,0 +1,219 @@
+.movie {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    padding-top: 150px;
+}
+.movie__tab-container {
+    display: flex;
+    height: 35px;
+    width: 100%;
+    border-radius: 3px;
+    background-color: #2d2c32;
+}
+.movie__tab {
+    color: rgba(255, 255, 255, .7);
+    width: 125px;
+    height: 100%;
+    line-height: 35px;
+    text-align: center;
+    font-weight: 500;
+    cursor: pointer;
+}
+.movie__tab_active {
+    background-color: var(--primary-color);
+    color: black;
+    border-radius: 3px;
+}
+.movie__card-container {
+    display: flex;
+    column-gap: 30px;
+    width: 100%;
+}
+.movie__card-poster {
+    width: 23%;
+    height: 370px;
+    border-radius: 3px;
+}
+.movie__card-poster-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+}
+.movie__card-info {
+    width: calc(77% - 30px);
+    display: flex;
+    flex-direction: column;
+}
+.movie__card-ru-name {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 700;
+}
+.movie__card-en-name {
+    color:rgba(255, 255, 255, .7);
+    font-size: 20px;
+    font-weight: 600;
+}
+.movie__card-rating-block {
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+    height: 55px;
+}
+.movie__card-imbd,
+.movie__card-kp {
+    font-weight: 300;
+    color: #fff;
+    display: flex;
+    column-gap: 5px;
+    height: 100%;
+    align-items: center;
+}
+.movie__card-imbd-image,
+.movie__card-kp-image {
+
+}
+.movie__card-limit {
+    color:#fff;
+    font-weight: 300;
+    padding: 3px 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, .5);
+}
+.movie__year,
+.movie__country {
+    font-weight: 300;
+    color: rgba(255, 255, 255, .8);
+    line-height: 25px;
+}
+.movie__year-span,
+.movie__country-span {
+    font-weight: 500;
+    color: #fff;
+    position: relative;
+}
+.movie__genre {
+    font-weight: 300;
+    color: rgba(255, 255, 255, .8);
+    line-height: 25px;
+    display: flex;
+    column-gap: 5px;
+    width: 100%;
+}
+.movie__genres {
+    display: flex;
+    column-gap: 4px;
+}
+.movie__genres-link {
+    font-weight: 500;
+    color: #fff;
+    position: relative;
+}
+.movie__year-span:hover::after,
+.movie__country-span:hover::after,
+.movie__genres-link:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+}
+.movie__slogan {
+    font-weight: 300;
+    color: rgba(255, 255, 255, .8);
+    line-height: 25px;
+}
+.movie__description {
+    font-weight: 300;
+    color: rgba(255, 255, 255, .8);
+    line-height: 18px;
+    margin: 10px 0;
+}
+.movie__composition {
+    font-weight: 300;
+    color: rgba(255, 255, 255, .8);
+    line-height: 18px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.movie__composition-div {
+    display: flex;
+    column-gap: 5px;
+    flex-wrap: wrap;
+    width: 82%;
+}
+.movie__composition-link {
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+}
+.movie__composition-link:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+}
+.movie__card-comments {
+
+}
+.movie__card-form {
+    display: flex;
+    column-gap: 15px;
+    width: 100%;
+}
+.movie__card-form-user {
+    width: 50px;
+    height: 50px;
+    background-color: #2d2c32;
+    border-radius: 50%;
+}
+.movie__card-form-input {
+    border: none;
+    flex-grow: 1;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #2d2c32;
+    text-indent: 10px;
+    color: rgba(255, 255, 255, .3);
+    outline-color: rgba(255, 255, 255, .8);
+}
+.movie__card-form-button {
+    width: 130px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 5px;
+    padding: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    background-color: #2d2c32;
+}
+
+.movie__card-screens {
+    display: flex;
+    gap: 25px;
+}
+.movie__card-screens-item {
+    height: 180px;
+    width: calc(25% - 18.75px);
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+}
+
+.movie__tab-content {
+    display: none;
+}
+.movie__tab-content_active {
+    display: flex;
+}
