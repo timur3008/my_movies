@@ -1,2 +1,2 @@
 # my_movies
-My movie website on Python(Django)
+This is my simple movie website on Python(Django)
